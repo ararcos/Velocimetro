@@ -1,0 +1,75 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+
+
+
+
+    <PreferenceCategory
+        android:title="@string/bandas"
+        android:key="pref_key_storage_settings">
+
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            default="1"
+            bindSummary="true"
+            max="1"
+            min="1"
+            step="1"
+            android:key="estado_parado"
+            android:title="@string/estado_parado" />
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            android:title="@string/estado_caminando"
+            android:key="estado_caminando"
+            default="4"
+
+            bindSummary="true"
+            max="10"
+            min="4"
+            step="1" />
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            android:title="@string/estado_marchando"
+            android:key="estado_marchando"
+            default="6"
+            bindSummary="true"
+            max="12"
+            min="6"
+            step="1" />
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            android:title="@string/estado_corriendo"
+            android:key="estado_corriendo"
+            default="12"
+            bindSummary="true"
+            max="20"
+            min="12"
+            step="1" />
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            android:title="@string/estado_sprint"
+            android:key="estado_sprint"
+            default="25"
+            bindSummary="true"
+            max="200"
+            min="25"
+            step="5" />
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            android:title="@string/estado_motor_terrestre"
+            android:key="estado_motor_terrestre"
+            default="170"
+            bindSummary="true"
+            max="200"
+            min="170"
+            step="10" />
+        <velo.uned.velocimetro.preferencias.NumberPickerPreference
+            android:title="@string/estado_aereo"
+            android:key="estado_aereo"
+            default="170"
+            bindSummary="true"
+            max="500"
+            min="170"
+            step="10"
+             />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

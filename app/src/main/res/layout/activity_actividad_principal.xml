@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="dbMedicion"
+            type="velo.uned.velocimetro.modelo.Medicion" />
+    </data>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/material_blue_500">
+
+        <com.gc.materialdesign.views.ProgressBarCircularIndeterminate
+            android:id="@+id/progressBarCircularIndeterminate"
+            android:layout_width="40dp"
+            android:layout_height="10dp"
+            android:elevation="10dp"
+            android:background="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="@{dbMedicion.listoParaEjecutarse ? View.VISIBLE : View.GONE}"/>
+
+
+
+<!-- Esperando por conexión al GPS-->
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dbMedicion.estado}"
+            android:visibility="@{!dbMedicion.listoParaEjecutarse ? View.VISIBLE : View.GONE}"/>
+        <!-- Velocidad-->
+        <TextView
+            android:id="@+id/txtVelocidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dbMedicion.velocidadActualString}"
+            android:gravity="center"
+            android:textSize="100sp"
+            android:textColor="@android:color/white"/>
+        <!-- Esperando por conexión al GPS-->
+        <TextView
+            android:id="@+id/txtRangoActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dbMedicion.rangoActual.descripcion}"
+            android:textSize="34sp"
+            android:textColor="@android:color/black"/>
+        <!-- Etiqueta de distancia rrecorrida-->
+        <TextView
+            android:id="@+id/lblDistancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Distancia"
+            android:textSize="22sp"/>
+        <!-- Distancia rrecorrida-->
+        <TextView
+            android:id="@+id/txtDistancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dbMedicion.distanciaString}"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"/>
+
+
+
+
+        <TextView
+            android:id="@+id/lblVelocidadMaxima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Velocidad Maxima"
+            android:textSize="22sp"/>
+        <!-- Velocidad maxima-->
+        <TextView
+            android:id="@+id/txtVelocidadMaxima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dbMedicion.velocidadMaximaString}"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"/>
+
+        <Chronometer
+            android:id="@+id/time"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp" />
+        <!-- Iniciar o reiniciar medición-->
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="iniciarMedicion"
+            android:text="Iniciar o reiniciar medición"
+            android:visibility="@{dbMedicion.listoParaEjecutarse ? View.VISIBLE : View.GONE}"/>
+        <!-- Detener medición-->
+        <Button
+            android:id="@+id/btnDetener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="detenerMedicion"
+            android:text="Detener medicion"
+            android:visibility="@{dbMedicion.enEjecucion ? View.VISIBLE : View.GONE}"/>
+
+
+    </LinearLayout>
+</layout>
