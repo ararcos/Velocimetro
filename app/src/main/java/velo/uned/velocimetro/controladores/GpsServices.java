@@ -19,6 +19,8 @@ import android.support.annotation.RequiresApi;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import velo.uned.velocimetro.main.ActividadPrincipal;
@@ -33,6 +35,7 @@ public class GpsServices extends Service implements LocationListener, GpsStatus.
     //Definición para extraer la configuración
     RutaServicios rutaServicios;
     Ruta ruta;
+    ArrayList<Ruta> rutalist;
     private SharedPreferences sharedPreferences;
     Location previousLocation = null;
     float previousTime = 0;
@@ -70,18 +73,20 @@ public class GpsServices extends Service implements LocationListener, GpsStatus.
         mLocationManager.addGpsStatusListener(this);
         rutaServicios=new RutaServicios(this);
         ruta= new Ruta();
+        rutalist = new ArrayList<>();
         mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, this);
     }
     //Evento de cambio de ubicación
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void onLocationChanged(Location location) {
         data = ActividadPrincipal.getData();
+        rutalist=data.getRutalist();
         if (data.isEnEjecucion()){
             currentLat = location.getLatitude();
             currentLon = location.getLongitude();
             ruta.setLongitud(currentLon);
             ruta.setLatitud(currentLat);
-            rutaServicios.addRuta(ruta);
+            rutalist.add(ruta);
             ruta=new Ruta();
             if (data.isFirstTime()){
                 lastLat = currentLat;
@@ -124,6 +129,7 @@ public class GpsServices extends Service implements LocationListener, GpsStatus.
                 }
             }
             //data.update();
+            data.setRutalist(rutalist);
             updateNotification(true);
         }
     }

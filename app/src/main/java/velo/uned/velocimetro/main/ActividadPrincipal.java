@@ -38,9 +38,11 @@ import velo.uned.velocimetro.databinding.ActivityActividadPrincipalBinding;
 import velo.uned.velocimetro.modelo.Medicion;
 import velo.uned.velocimetro.modelo.RangoVelocidad;
 import velo.uned.velocimetro.servicios.MedicionServicio;
+import velo.uned.velocimetro.servicios.RutaServicios;
 
 public class ActividadPrincipal extends  AppCompatActivity  implements LocationListener, GpsStatus.Listener {
     MedicionServicio medicionServicio;
+    RutaServicios rutaServicios;
     private String accuracy;
     private boolean firstfix;
     //private String status;
@@ -94,6 +96,7 @@ public class ActividadPrincipal extends  AppCompatActivity  implements LocationL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
         medicionServicio=new MedicionServicio(this);
+        rutaServicios=new RutaServicios(this);
         //setContentView(R.layout.activity_actividad_principal);
 
         //Toolbar toolBar = (Toolbar)findViewById(R.id.toolBar);
@@ -267,7 +270,9 @@ public class ActividadPrincipal extends  AppCompatActivity  implements LocationL
     //Detener una medición
     public void detenerMedicion(View view){
         if (medicionServicio.addMedicion(data)) {
-            Toast.makeText(this, "Guardado Correctamente!", Toast.LENGTH_SHORT).show();
+            if(rutaServicios.addAllRuta(data.getRutalist(),data.getId())) {
+                Toast.makeText(this, "Guardado Correctamente!", Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, "Ocurrio Un error al guardar!", Toast.LENGTH_SHORT).show();
         }

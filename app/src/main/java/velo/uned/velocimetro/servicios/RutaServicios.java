@@ -22,6 +22,10 @@ public class RutaServicios {
 
         return  rutaDAO.insertar(ruta);
     }
+    public boolean addAllRuta(ArrayList<Ruta> rutalist,Long id) {
+
+        return  rutaDAO.insertar(rutalist,id);
+    }
     public boolean updateRuta(Ruta ruta) {
 
         return  rutaDAO.alterar(ruta);

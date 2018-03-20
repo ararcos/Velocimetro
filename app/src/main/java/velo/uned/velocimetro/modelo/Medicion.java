@@ -26,6 +26,7 @@ public class Medicion extends BaseObservable implements Parcelable {
     public static final String campo_velocidad="velocidad_med";
 
     private Long id;
+    private ArrayList<Ruta> rutalist;
     @Bindable
     private Date  fechaInicio;
     @Bindable
@@ -73,7 +74,15 @@ public class Medicion extends BaseObservable implements Parcelable {
 
     private boolean isFirstTime;
 
-public void setId(Long id){this.id=id;}
+    public ArrayList<Ruta> getRutalist() {
+        return rutalist;
+    }
+
+    public void setRutalist(ArrayList<Ruta> rutalist) {
+        this.rutalist = rutalist;
+    }
+
+    public void setId(Long id){this.id=id;}
 public Long getId(){return this.id;}
     //private onGpsServiceUpdate onGpsServiceUpdate;
 

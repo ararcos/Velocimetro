@@ -9,14 +9,25 @@ public class Ruta {
     public static final String campo_id="id_rut";
     public static final String campo_latitud="latitud_rut";
     public static final String campo_longitud="longitud_rut";
+    public static final String campo_id_medicion="id_med";
 
 
     private Long id;
     private Double latitud;
     private Double longitud;
+    private Long id_medicion;
+
+
 
     public Ruta() {
 
+    }
+    public Long getId_medicion() {
+        return id_medicion;
+    }
+
+    public void setId_medicion(Long id_medicion) {
+        this.id_medicion = id_medicion;
     }
     public Long getId() {
         return id;
