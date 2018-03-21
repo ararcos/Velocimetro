@@ -119,5 +119,10 @@
     <string name="estado_aereo">ESTADO VEH. MOTOR AÉREO</string>
     <string name="dialog_title_default">Choose a value</string>
     <string name="dialog_save_button_text">Save</string>
+    <string name="usuario">Usuario</string>
+    <string name="contra">Contraseña</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="registrar">Registrar</string>
+    <string name="registrarTitulo">Registro Usuario</string>
 </resources>
 

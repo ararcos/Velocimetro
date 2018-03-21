@@ -33,7 +33,6 @@ import java.util.List;
 import velo.uned.velocimetro.R;
 import velo.uned.velocimetro.SettingsActivity;
 import velo.uned.velocimetro.controladores.GpsServices;
-import velo.uned.velocimetro.dao.MedicionDAO;
 import velo.uned.velocimetro.databinding.ActivityActividadPrincipalBinding;
 import velo.uned.velocimetro.modelo.Medicion;
 import velo.uned.velocimetro.modelo.RangoVelocidad;

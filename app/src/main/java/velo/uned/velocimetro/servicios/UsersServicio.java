@@ -16,22 +16,25 @@ public class UsersServicio {
         usersDAO = new UsersDAO(context);
     }
 
-    public boolean addRuta(Users users) {
+    public boolean addUser(Users users) {
 
         return usersDAO.insertar(users);
     }
 
-    public boolean updateRuta(Users users) {
+    public boolean updateUser(Users users) {
 
         return usersDAO.alterar(users);
     }
 
-    public boolean deleteRuta(Users users) {
+    public boolean deleteUser(Users users) {
 
         return usersDAO.borrar(users);
     }
 
-    public boolean getRuta(Users users) {
+    public boolean getUser(Users users) {
         return usersDAO.getUser(users);
+    }
+    public boolean getUserO(Users users) {
+        return usersDAO.getUserO(users);
     }
 }

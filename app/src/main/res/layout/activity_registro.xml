@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="dbuser"
+            type="velo.uned.velocimetro.modelo.Users" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="velo.uned.velocimetro.diseño.Registro">
+
+    <TextView
+        android:id="@+id/lblRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarTitulo"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+    <EditText
+        android:id="@+id/txtUsuarioReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/usuario"
+        android:inputType="text"
+        android:text="@{dbuser.user}"/>
+    <EditText
+        android:id="@+id/txtPassReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/contra"
+        android:inputType="text"
+        android:text="@{dbuser.pass}"/>
+    <Button
+        android:id="@+id/btnRegistarReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrar"
+        android:layout_gravity="center"
+        android:onClick="registrar"
+        />
+
+</LinearLayout>
+</layout>

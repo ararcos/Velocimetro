@@ -64,5 +64,21 @@ public class UsersDAO {
         Cursor cursor = db.query(user.tabla,campos,where,parametro,null,null,null);
         return cursor!=null;
     }
+    public  boolean getUserO(Users users){
+        SQLiteDatabase db = dbsqLite.getReadableDatabase();
+        Users nuUser=new Users();
+        String selectQuery = "SELECT  " +
+                users.campo_id + "," +
+                users.campo_usuario + "," +
+                users.campo_contraseña +
+                " FROM " + users.tabla +
+                " WHERE " + users.campo_usuario +
+                "='" + users.getUser() +
+                "' AND " + users.campo_contraseña +
+                "='" + users.getPass();
 
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        db.close();
+        return cursor.moveToFirst();
+    }
 }
