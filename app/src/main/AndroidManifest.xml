@@ -31,9 +31,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="velo.uned.velocimetro.main.ActividadPrincipal" />
         </activity>
-        <activity
-            android:name=".diseño.Login"
-            android:label="INICIAR SESION"></activity>
+        <activity android:name=".diseño.Login"></activity>
         <activity android:name=".diseño.Registro"></activity>
     </application>
 
