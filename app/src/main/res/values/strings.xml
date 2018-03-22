@@ -124,5 +124,7 @@
     <string name="iniciar">Iniciar</string>
     <string name="registrar">Registrar</string>
     <string name="registrarTitulo">Registro Usuario</string>
+    <string name="titulo_Login">Logeo</string>
+
 </resources>
 

@@ -13,11 +13,7 @@
         <activity
             android:name=".main.ActividadPrincipal"
             android:theme="@style/Theme.AppCompat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name=".controladores.GpsServices" />
@@ -31,8 +27,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="velo.uned.velocimetro.main.ActividadPrincipal" />
         </activity>
-        <activity android:name=".diseño.Login"></activity>
-        <activity android:name=".diseño.Registro"></activity>
+        <activity
+            android:name=".diseno.Login"
+            android:label="@string/titulo_Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".diseno.Registro"
+            android:label="@string/registrarTitulo"/>
+        <activity android:name=".diseno.ListaMediciones" />
     </application>
 
 </manifest>

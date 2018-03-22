@@ -1,16 +1,14 @@
-package velo.uned.velocimetro.diseño;
+package velo.uned.velocimetro.diseno;
 
 import android.databinding.DataBindingUtil;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
-import velo.uned.velocimetro.R;
 import velo.uned.velocimetro.databinding.ActivityRegistroBinding;
 import velo.uned.velocimetro.modelo.Users;
 import velo.uned.velocimetro.servicios.UsersServicio;
+import velo.uned.velocimetro.R;
 
 public class Registro extends AppCompatActivity {
     Users users;

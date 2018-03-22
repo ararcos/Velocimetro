@@ -24,13 +24,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import velo.uned.velocimetro.R;
+
 import velo.uned.velocimetro.SettingsActivity;
 import velo.uned.velocimetro.controladores.GpsServices;
 import velo.uned.velocimetro.databinding.ActivityActividadPrincipalBinding;
@@ -38,6 +37,7 @@ import velo.uned.velocimetro.modelo.Medicion;
 import velo.uned.velocimetro.modelo.RangoVelocidad;
 import velo.uned.velocimetro.servicios.MedicionServicio;
 import velo.uned.velocimetro.servicios.RutaServicios;
+import velo.uned.velocimetro.R;
 
 public class ActividadPrincipal extends  AppCompatActivity  implements LocationListener, GpsStatus.Listener {
     MedicionServicio medicionServicio;
