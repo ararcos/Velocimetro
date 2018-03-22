@@ -14,7 +14,6 @@ import velo.uned.velocimetro.modelo.Medicion;
 
 public class MedicionServicio {
     private MedicionDAO medicionDAO;
-
     public MedicionServicio(Context context) {
         medicionDAO = new MedicionDAO(context);
     }
@@ -39,7 +38,7 @@ public class MedicionServicio {
         return nuMedicion;
     }
     public ArrayList<Medicion> getallMedicion() {
-        ArrayList<Medicion> medicionList = medicionDAO.listar();
+      ArrayList<Medicion> medicionList = medicionDAO.listar();
         return medicionList;
     }
 }
